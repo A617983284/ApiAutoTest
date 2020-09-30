@@ -1,7 +1,18 @@
 '''
 脚本层的公共方法
 '''
+import os
+import sys
+
 import pytest
+#把当前目录加到代码里
+file = os.path.realpath(__file__)
+# 工程的路径加到系统的环境变量里
+dir_name = os.path.dirname(file)
+dir_name = os.path.dirname(dir_name)
+dir_name = os.path.dirname(dir_name)
+print(dir_name)
+sys.path.append(dir_name)
 
 #读取环境文件，获取url
 from JinRongZongHe.baw.DbOp import DbOp

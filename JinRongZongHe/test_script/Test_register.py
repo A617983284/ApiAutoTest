@@ -36,7 +36,7 @@ def test_register_fail(fail_data,url,base_requests):
 # 注册成功的逻辑
 def test_register_success(success_data,url,db,base_requests):
     print(f"执行注册成功的用例，测试数据为：{success_data}")
-    # DbOp().delete_user(db, success_data["data"]["mobilephone"])
+    DbOp().delete_user(db, success_data["data"]["mobilephone"])
     r=Member().register(url,base_requests,success_data["data"])
     # assert str(success_data["expect"]["msg"])==str(r.json()["msg"])
     # assert str(success_data["expect"]["code"]) == str(r.json()["code"])

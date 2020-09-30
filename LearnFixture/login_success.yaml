@@ -1,0 +1,43 @@
+# 手机号正确，密码6位，登录成功
+- data:{"mobilephone":"13227011051","pwd":"abcdef"}
+  except:{"code":10001,"data":{},"msg":"登录成功","status":1}
+
+# 手机号正确，密码8位，登录成功
+- data:{"mobilephone":"13227011051","pwd":"abcdefgh"}
+  except:{"code":10001,"data":{},"msg":"登录成功","status":1}
+
+# 手机号正确，密码18位，登录成功
+- data:{"mobilephone":"13227011051","pwd":"abcdefabcdefabcdef"}
+  except:{"code":10001,"data":{},"msg":"登录成功","status":1}
+
+# 手机号为空，密码正确，登录失败
+- data:{"mobilephone":"","pwd":"abcdef"}
+  except:{"code":20103,"data":{},"msg":"参数错误：参数不能为空","status":0}
+
+# 手机号正确，密码为空，登录失败
+- data:{"mobilephone":"13227011051","pwd":""}
+  except:{"code":20103,"data":{},"msg":"参数错误：参数不能为空","status":0}
+
+# 手机号为空，密码为空，登录失败
+- data:{"mobilephone":"","pwd":""}
+  except:{"code":20103,"data":{},"msg":"参数错误：参数不能为空","status":0}
+
+# 手机号为10，密码正确，登录失败
+- data:{"mobilephone":"1333333333","pwd":"abcdef"}
+  except:{"code":10001,"data":{},"msg":"用户名或者密码错误","status":0}
+
+# 手机号为12，密码正确，登录失败
+- data:{"mobilephone":"133333333322","pwd":"abcdef"}
+  except:{"code":20111,"data":{},"msg":"用户名或者密码错误","status":0}
+
+# 手机号正确，密码5，登录失败
+- data:{"mobilephone":"13333333332","pwd":"abcde"}
+  except:{"code":20111,"data":{},"msg":"用户名或者密码错误","status":0}
+
+# 手机号正确，密码19，登录失败
+- data:{"mobilephone":"13333333332","pwd":"abcdefabcdefabcdef1"}
+except:{"code":20111,"data":{},"msg":"用户名或者密码错误","status":0}
+
+# 手机号10，密码19，登录失败
+- data:{"mobilephone":"1333333333","pwd":"abcdefabcdefabcdef1"}
+except:{"code":20111,"data":{},"msg":"用户名或者密码错误","status":0}
